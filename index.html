@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, 0);
+var book = {
+    title: "The Giver",
+    stars: 4
+};
+var books = ["The Giver", "Pelle", "4", 
+    "The Forest", "Mango", "3",
+    "Cookies", "Camilla", "4",
+    "Yellow Car", "André", "2"];
+ 
+// draw shelf
+fill(173, 117, 33);
+rect(0, 120, width, 10);
+
+// draw one book
+var bIndex = 0;
+for( var xx = 10; xx < 325; xx += 98) {
+    fill(214, 255, 219);
+    rect(xx, 20, 90, 100);
+    fill(0, 0, 0);
+    text(books[bIndex], xx + 5, 29, 70, 100);
+    text(books[bIndex + 1], xx + 5, 60, 70, 100);
+    for (var i = 0; i < books[bIndex + 2]; i++) {
+        image(getImage("cute/Star"), xx + i * 20, 90, 20, 30);
+    }
+    bIndex += 3;
+}    
+</script>
+
+</body>
+</html>
